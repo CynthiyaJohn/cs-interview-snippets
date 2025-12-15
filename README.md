@@ -33,6 +33,7 @@ Each snippet in this repository:
 ## 🗂️ Repository Structure
 
 cs-interview-snippets/
+
 │
 ├── java/
 │ └── SingletonExample.java
@@ -112,3 +113,4 @@ This repository is intentionally kept minimal.
 The focus is on **understanding**, not on building full-scale applications.
 
 ---
+
