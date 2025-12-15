@@ -81,6 +81,13 @@ This snippet demonstrates:
 List after modification: [1, 2, 3, 100]
 Number after modification: 50
 
+---
+
+## Sample Output (Java)
+
+true
+
+This confirms that multiple calls to `getInstance()` return the same object reference.
 
 ---
 
@@ -112,5 +119,6 @@ This repository is intentionally kept minimal.
 The focus is on **understanding**, not on building full-scale applications.
 
 ---
+
 
 
