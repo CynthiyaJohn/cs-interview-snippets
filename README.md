@@ -11,12 +11,12 @@ and conceptual understanding** through minimal yet meaningful implementations.
 ## 📌 Why this Repository?
 
 During technical interviews, candidates are often evaluated on:
-- Core CS understanding
-- Ability to explain behavior, not just syntax
-- Awareness of common pitfalls and patterns
+- Core Computer Science fundamentals
+- Ability to explain **program behavior**, not just syntax
+- Awareness of common pitfalls, patterns, and concurrency issues
 
 This repository serves as a **personal reference** to revisit
-frequently asked interview concepts with **working examples**.
+frequently asked interview concepts using **working, explainable examples**.
 
 ---
 
@@ -26,7 +26,7 @@ Each snippet in this repository:
 - Demonstrates **one interview-relevant concept**
 - Uses **clean and minimal code**
 - Avoids unnecessary frameworks or boilerplate
-- Is easy to explain verbally in an interview setting
+- Can be easily explained verbally during interviews
 
 ---
 
@@ -35,16 +35,18 @@ Each snippet in this repository:
 cs-interview-snippets/
 │
 ├── java/
-│ └── SingletonExample.java
+│ ├── SingletonExample.java
+│ └── DeadlockVsStarvation.java
 │
 ├── python/
-│ └── mutable_vs_immutable.py
+│ ├── mutable_vs_immutable.py
+│ └── shallow_vs_deep_copy.py
 │
 └── README.md
 
-------------------------------------
+---
 
-## ☕ Java Snippet
+## ☕ Java Snippets
 
 ### Singleton Pattern
 
@@ -53,14 +55,27 @@ cs-interview-snippets/
 This snippet demonstrates:
 - Lazy initialization
 - Controlled object creation
-- A commonly asked **design pattern interview question**
+- Ensuring only one instance of a class exists
 
 📌 *Interview angle:*  
-“Why would you restrict object creation, and what are the trade-offs?”
+Why would you restrict object creation, and what problems does Singleton solve?
 
 ---
 
-## 🐍 Python Snippet
+### Deadlock vs Starvation
+
+**File:** `java/DeadlockVsStarvation.java`
+
+This snippet demonstrates:
+- How deadlocks occur due to circular lock dependency
+- Why threads can block indefinitely in concurrent programs
+
+📌 *Interview angle:*  
+What is a deadlock, and how is it different from starvation?
+
+---
+
+## 🐍 Python Snippets
 
 ### Mutable vs Immutable Objects
 
@@ -69,25 +84,92 @@ This snippet demonstrates:
 This snippet demonstrates:
 - How mutable objects (like lists) behave when passed to functions
 - How immutable objects (like integers) remain unchanged
-- A classic **Python interview trap question**
+- A common Python interview trap
 
 📌 *Interview angle:*  
-“Why did the list change but the integer did not?”
+Why does modifying a list inside a function affect the original list, but not an integer?
 
 ---
 
-## ▶️ Sample Output (Python)
+### Shallow vs Deep Copy
+
+**File:** `python/shallow_vs_deep_copy.py`
+
+This snippet demonstrates:
+- The difference between shallow and deep copying
+- How nested object references behave
+- When to use `copy()` vs `deepcopy()`
+
+📌 *Interview angle:*  
+Why does a shallow copy reflect changes made to the original object?
+
+---
+
+## ▶️ Sample Outputs
+
+### Deadlock vs Starvation (Java)
+
+(no output – program hangs indefinitely due to deadlock)
+
+### Singleton Pattern (Java)
+
+true
+
+### Mutable vs Immutable (Python)
 
 List after modification: [1, 2, 3, 100]
 Number after modification: 50
 
+### Shallow vs Deep Copy (Python)
+
+Original: [[1, 2, 99], [3, 4]]
+Shallow Copy: [[1, 2, 99], [3, 4]]
+Deep Copy: [[1, 2], [3, 4]]
+
+
 ---
 
-## Sample Output (Java)
+## 🧠 Explanation of Outputs
 
-true
+### Deadlock vs Starvation (Java)
 
-This confirms that multiple calls to `getInstance()` return the same object reference.
+In the deadlock example, each thread acquires one lock and then waits
+indefinitely for another lock held by a different thread.
+
+Since neither thread can proceed, the program hangs without producing output.
+This demonstrates a **deadlock**, where progress is impossible due to
+circular lock dependency.
+
+---
+
+### Singleton Pattern (Java)
+
+The output `true` confirms that multiple calls to `getInstance()` return the
+**same object reference**.
+
+This verifies that:
+- Only one instance of the class is created
+- The Singleton pattern enforces controlled object creation
+
+---
+
+### Mutable vs Immutable (Python)
+
+The list is modified inside the function and the change persists outside
+because lists are **mutable** in Python.
+
+The integer value remains unchanged because integers are **immutable**,
+and reassignment creates a new object rather than modifying the original.
+
+---
+
+### Shallow vs Deep Copy (Python)
+
+The shallow copy shares references to nested objects, so modifying the
+original nested list also affects the shallow copy.
+
+The deep copy creates fully independent objects, so changes to the original
+do not affect it.
 
 ---
 
@@ -95,7 +177,7 @@ This confirms that multiple calls to `getInstance()` return the same object refe
 
 By maintaining this repository, I aim to:
 - Strengthen core CS fundamentals
-- Improve interview explanations with practical examples
+- Improve interview explanations using real code behavior
 - Build consistency through small, high-quality updates
 - Develop confidence in explaining *why* code behaves the way it does
 
@@ -104,21 +186,20 @@ By maintaining this repository, I aim to:
 ## 🚀 Future Additions
 
 Planned snippets include:
-- Deadlock vs Starvation (Java)
-- Shallow vs Deep Copy (Python)
 - Default Mutable Arguments (Python)
 - Thread Safety Basics (Java)
+- Race Conditions and Synchronization
+- Concurrency and Memory Visibility concepts
 
-Each addition will follow the same **one-concept-per-file** approach.
+Each addition will follow the **one-concept-per-file** approach.
 
 ---
 
 ## ⚠️ Note
 
 This repository is intentionally kept minimal.
-The focus is on **understanding**, not on building full-scale applications.
-
----
+The focus is on **understanding and interview readiness**, not on building
+full-scale applications or libraries.
 
 
 
