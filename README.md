@@ -1,32 +1,35 @@
 # CS Interview Snippets 🧩
 
 A curated collection of **small, focused Java and Python code snippets**
-designed specifically for **Computer Science and Software Engineering interview preparation**.
+designed for **Computer Science & Software Engineering interview preparation**.
 
 Instead of large projects, this repository emphasizes **clarity, correctness,
 and conceptual understanding** through minimal yet meaningful implementations.
 
 ---
 
-## 📌 Why this Repository?
+## 📌 Why This Repository?
 
-During technical interviews, candidates are often evaluated on:
-- Core Computer Science fundamentals
+In technical interviews, candidates are evaluated on:
+- Core **Computer Science fundamentals**
 - Ability to explain **program behavior**, not just syntax
-- Awareness of common pitfalls, patterns, and concurrency issues
+- Awareness of **common pitfalls**, design patterns, and concurrency issues
 
-This repository serves as a **personal reference** to revisit
-frequently asked interview concepts using **working, explainable examples**.
+This repository acts as a **personal interview reference**
+containing frequently asked concepts implemented as
+**clean, runnable, and explainable code snippets**.
 
 ---
 
-## 🧠 What This Repo Focuses On
+## 🧠 Key Philosophy
 
 Each snippet in this repository:
 - Demonstrates **one interview-relevant concept**
-- Uses **clean and minimal code**
-- Avoids unnecessary frameworks or boilerplate
-- Can be easily explained verbally during interviews
+- Uses **minimal, readable code**
+- Avoids frameworks and unnecessary boilerplate
+- Can be **explained verbally within minutes**
+
+> One concept → One file → Clear explanation
 
 ---
 
@@ -35,171 +38,180 @@ Each snippet in this repository:
 cs-interview-snippets/
 │
 ├── java/
-│ ├── SingletonExample.java
-│ └── DeadlockVsStarvation.java
+│ ├── DeadlockVsStarvation.java
+│ ├── RaceConditionDemo.java
+│ ├── Singletonexample.java
+│ └── ThreadSafetyBasics.java
 │
 ├── python/
+│ ├── default_mutable_arguments.py
+│ ├── gil_demo.py
 │ ├── mutable_vs_immutable.py
 │ └── shallow_vs_deep_copy.py
 │
 └── README.md
 
+yaml
+Copy code
+
 ---
 
 ## ☕ Java Snippets
 
-### Singleton Pattern
+### 1️⃣ Singleton Pattern
 
-**File:** `java/SingletonExample.java`
+**File:** `java/Singletonexample.java`
 
-This snippet demonstrates:
+Demonstrates:
 - Lazy initialization
 - Controlled object creation
-- Ensuring only one instance of a class exists
+- Ensuring a single instance across the application
 
-📌 *Interview angle:*  
-Why would you restrict object creation, and what problems does Singleton solve?
+📌 **Interview angle:**  
+Why restrict object creation? How does Singleton differ from static classes?
 
 ---
 
-### Deadlock vs Starvation
+### 2️⃣ Deadlock vs Starvation
 
 **File:** `java/DeadlockVsStarvation.java`
 
-This snippet demonstrates:
-- How deadlocks occur due to circular lock dependency
-- Why threads can block indefinitely in concurrent programs
+Demonstrates:
+- Circular lock dependency
+- Threads waiting indefinitely
+- Difference between deadlock and starvation
 
-📌 *Interview angle:*  
-What is a deadlock, and how is it different from starvation?
+📌 **Interview angle:**  
+How do deadlocks occur, and how can they be prevented?
+
+---
+
+### 3️⃣ Race Condition
+
+**File:** `java/RaceConditionDemo.java`
+
+Demonstrates:
+- Multiple threads accessing shared data
+- Inconsistent output due to lack of synchronization
+
+📌 **Interview angle:**  
+What is a race condition, and how does synchronization solve it?
+
+---
+
+### 4️⃣ Thread Safety Basics
+
+**File:** `java/ThreadSafetyBasics.java`
+
+Demonstrates:
+- Thread-safe vs non-thread-safe behavior
+- Use of synchronization mechanisms
+
+📌 **Interview angle:**  
+What makes code thread-safe, and why is it important?
 
 ---
 
 ## 🐍 Python Snippets
 
-### Mutable vs Immutable Objects
+### 1️⃣ Mutable vs Immutable Objects
 
 **File:** `python/mutable_vs_immutable.py`
 
-This snippet demonstrates:
-- How mutable objects (like lists) behave when passed to functions
-- How immutable objects (like integers) remain unchanged
-- A common Python interview trap
+Demonstrates:
+- Behavior of mutable objects (lists)
+- Behavior of immutable objects (integers, strings)
+- A classic Python interview pitfall
 
-📌 *Interview angle:*  
-Why does modifying a list inside a function affect the original list, but not an integer?
+📌 **Interview angle:**  
+Why do changes to lists persist outside functions but integers do not?
 
 ---
 
-### Shallow vs Deep Copy
+### 2️⃣ Shallow vs Deep Copy
 
 **File:** `python/shallow_vs_deep_copy.py`
 
-This snippet demonstrates:
-- The difference between shallow and deep copying
-- How nested object references behave
-- When to use `copy()` vs `deepcopy()`
+Demonstrates:
+- Reference sharing in shallow copies
+- Fully independent objects in deep copies
 
-📌 *Interview angle:*  
-Why does a shallow copy reflect changes made to the original object?
+📌 **Interview angle:**  
+Why does modifying a nested object affect a shallow copy?
+
+---
+
+### 3️⃣ Default Mutable Arguments
+
+**File:** `python/default_mutable_arguments.py`
+
+Demonstrates:
+- How default mutable arguments retain state across function calls
+- Why this behavior is dangerous
+
+📌 **Interview angle:**  
+Why should mutable objects not be used as default arguments?
+
+---
+
+### 4️⃣ Global Interpreter Lock (GIL)
+
+**File:** `python/gil_demo.py`
+
+Demonstrates:
+- Python’s Global Interpreter Lock
+- Why multi-threading doesn’t always mean parallel execution
+
+📌 **Interview angle:**  
+What is the GIL, and how does it affect Python multithreading?
 
 ---
 
 ## ▶️ Sample Outputs
 
-### Deadlock vs Starvation (Java)
-
-(no output – program hangs indefinitely due to deadlock)
-
 ### Singleton Pattern (Java)
-
 true
 
-### Mutable vs Immutable (Python)
+### Deadlock vs Starvation (Java)
+(no output – program hangs due to deadlock)
 
+### Mutable vs Immutable (Python)
 List after modification: [1, 2, 3, 100]
 Number after modification: 50
 
 ### Shallow vs Deep Copy (Python)
-
 Original: [[1, 2, 99], [3, 4]]
 Shallow Copy: [[1, 2, 99], [3, 4]]
 Deep Copy: [[1, 2], [3, 4]]
 
+---
+
+## 🧠 Learning Outcomes
+
+Through this repository, I aim to:
+- Strengthen **core CS fundamentals**
+- Improve **interview explanations using real code behavior**
+- Practice explaining *why* code behaves the way it does
+- Build consistency through **small, high-quality commits**
 
 ---
 
-## 🧠 Explanation of Outputs
+## 🚀 Future Enhancements
 
-### Deadlock vs Starvation (Java)
+Planned additions:
+- Memory visibility & `volatile` (Java)
+- Producer–Consumer problem
+- Python multiprocessing vs threading
+- JVM vs Python memory model
 
-In the deadlock example, each thread acquires one lock and then waits
-indefinitely for another lock held by a different thread.
-
-Since neither thread can proceed, the program hangs without producing output.
-This demonstrates a **deadlock**, where progress is impossible due to
-circular lock dependency.
-
----
-
-### Singleton Pattern (Java)
-
-The output `true` confirms that multiple calls to `getInstance()` return the
-**same object reference**.
-
-This verifies that:
-- Only one instance of the class is created
-- The Singleton pattern enforces controlled object creation
-
----
-
-### Mutable vs Immutable (Python)
-
-The list is modified inside the function and the change persists outside
-because lists are **mutable** in Python.
-
-The integer value remains unchanged because integers are **immutable**,
-and reassignment creates a new object rather than modifying the original.
-
----
-
-### Shallow vs Deep Copy (Python)
-
-The shallow copy shares references to nested objects, so modifying the
-original nested list also affects the shallow copy.
-
-The deep copy creates fully independent objects, so changes to the original
-do not affect it.
-
----
-
-## 🎯 Learning Outcomes
-
-By maintaining this repository, I aim to:
-- Strengthen core CS fundamentals
-- Improve interview explanations using real code behavior
-- Build consistency through small, high-quality updates
-- Develop confidence in explaining *why* code behaves the way it does
-
----
-
-## 🚀 Future Additions
-
-Planned snippets include:
-- Default Mutable Arguments (Python)
-- Thread Safety Basics (Java)
-- Race Conditions and Synchronization
-- Concurrency and Memory Visibility concepts
-
-Each addition will follow the **one-concept-per-file** approach.
+All future additions will follow the  
+**one-concept-per-file** rule.
 
 ---
 
 ## ⚠️ Note
 
-This repository is intentionally kept minimal.
-The focus is on **understanding and interview readiness**, not on building
-full-scale applications or libraries.
+This repository is intentionally **minimal and focused**.
 
-
-
+It is meant for **learning, revision, and interview preparation** —
+not for building production-grade applications.
