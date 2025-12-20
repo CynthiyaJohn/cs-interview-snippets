@@ -1,3 +1,10 @@
+Perfect. Your README is already **strong** — now I’ll **edit and extend it** so it **EXACTLY matches your current file structure** and **adds the missing snippets cleanly**, without bloating or changing your tone.
+
+Below is the **UPDATED, DROP-IN REPLACEMENT README.md**
+👉 You can **replace your entire README with this**.
+
+---
+
 # **CS Interview Snippets 🧩**
 
 A curated collection of **small, focused Java and Python code snippets** designed for **Computer Science & Software Engineering interview preparation**.
@@ -13,6 +20,7 @@ In technical interviews, candidates are evaluated on:
 * Strong **Computer Science fundamentals**
 * Ability to explain **program behavior**, not just syntax
 * Awareness of **common pitfalls, design patterns, and concurrency issues**
+* Understanding of **language internals and memory models**
 
 This repository serves as a **personal interview reference**, containing frequently asked concepts implemented as **clean, runnable, and explainable code snippets**.
 
@@ -40,6 +48,9 @@ cs-interview-snippets/
 │   ├── DeadlockVsStarvation.java
 │   ├── RaceConditionDemo.java
 │   ├── SingletonExample.java
+│   ├── DoubleCheckedLockingSingleton.java
+│   ├── ExecutorServiceDemo.java
+│   ├── ImmutableClassDemo.java
 │   ├── ThreadSafetyBasics.java
 │   └── VolatileDemo.java
 │
@@ -48,7 +59,10 @@ cs-interview-snippets/
 │   ├── gil_demo.py
 │   ├── mutable_vs_immutable.py
 │   ├── shallow_vs_deep_copy.py
-│   └── generator_vs_list.py
+│   ├── generator_vs_list.py
+│   ├── decorator_basics.py
+│   ├── context_manager_demo.py
+│   └── list_vs_tuple_performance.py
 │
 └── README.md
 ```
@@ -57,7 +71,7 @@ cs-interview-snippets/
 
 ## ☕ Java Snippets
 
-### 1️⃣ Singleton Pattern
+### 1️⃣ Singleton Pattern (Basic)
 
 **File:** `java/SingletonExample.java`
 
@@ -72,7 +86,22 @@ Why restrict object creation? How does Singleton differ from static classes?
 
 ---
 
-### 2️⃣ Deadlock vs Starvation
+### 2️⃣ Double-Checked Locking Singleton
+
+**File:** `java/DoubleCheckedLockingSingleton.java`
+
+**Demonstrates:**
+
+* Thread-safe lazy initialization
+* Use of `volatile`
+* Reducing synchronization overhead
+
+📌 **Interview angle:**
+Why is `volatile` mandatory here? What problem does double-checked locking solve?
+
+---
+
+### 3️⃣ Deadlock vs Starvation
 
 **File:** `java/DeadlockVsStarvation.java`
 
@@ -87,46 +116,75 @@ How do deadlocks occur, and how can they be prevented?
 
 ---
 
-### 3️⃣ Race Condition
+### 4️⃣ Race Condition
 
 **File:** `java/RaceConditionDemo.java`
 
 **Demonstrates:**
 
 * Multiple threads accessing shared data
-* Inconsistent output due to lack of synchronization
+* Inconsistent results due to lack of synchronization
 
 📌 **Interview angle:**
 What is a race condition, and how does synchronization solve it?
 
 ---
 
-### 4️⃣ Thread Safety Basics
+### 5️⃣ Thread Safety Basics
 
 **File:** `java/ThreadSafetyBasics.java`
 
 **Demonstrates:**
 
 * Thread-safe vs non-thread-safe behavior
-* Use of synchronization mechanisms
+* Basic synchronization mechanisms
 
 📌 **Interview angle:**
-What makes code thread-safe, and why is it important?
+What makes code thread-safe, and why is thread safety important?
 
 ---
 
-### 5️⃣ Volatile Keyword (Memory Visibility)
+### 6️⃣ ExecutorService (Thread Pool)
+
+**File:** `java/ExecutorServiceDemo.java`
+
+**Demonstrates:**
+
+* Thread pooling
+* Controlled task execution
+* Proper shutdown of executors
+
+📌 **Interview angle:**
+Why is `ExecutorService` preferred over manual thread creation?
+
+---
+
+### 7️⃣ Immutable Class Design
+
+**File:** `java/ImmutableClassDemo.java`
+
+**Demonstrates:**
+
+* Creating immutable objects
+* Defensive copying
+* Benefits of immutability in concurrency
+
+📌 **Interview angle:**
+Why are immutable objects inherently thread-safe?
+
+---
+
+### 8️⃣ Volatile Keyword (Memory Visibility)
 
 **File:** `java/VolatileDemo.java`
 
 **Demonstrates:**
 
-* Java Memory Model visibility issues
-* How `volatile` ensures updated values are visible across threads
+* Java Memory Model visibility guarantees
 * Difference between **visibility** and **atomicity**
 
 📌 **Interview angle:**
-Why does `volatile` not guarantee thread safety? When should `volatile` be used instead of synchronization?
+Why does `volatile` not guarantee thread safety? When should it be used?
 
 ---
 
@@ -140,7 +198,6 @@ Why does `volatile` not guarantee thread safety? When should `volatile` be used 
 
 * Behavior of mutable objects (lists)
 * Behavior of immutable objects (integers, strings)
-* A classic Python interview pitfall
 
 📌 **Interview angle:**
 Why do changes to lists persist outside functions but integers do not?
@@ -167,8 +224,8 @@ Why does modifying a nested object affect a shallow copy?
 
 **Demonstrates:**
 
-* How default mutable arguments retain state across function calls
-* Why this behavior is dangerous
+* Persistence of default mutable arguments across calls
+* Why this is a common Python pitfall
 
 📌 **Interview angle:**
 Why should mutable objects not be used as default arguments?
@@ -182,7 +239,7 @@ Why should mutable objects not be used as default arguments?
 **Demonstrates:**
 
 * Python’s Global Interpreter Lock
-* Why multi-threading doesn’t always mean parallel execution
+* Limitations of CPU-bound multithreading
 
 📌 **Interview angle:**
 What is the GIL, and how does it affect Python multithreading?
@@ -195,58 +252,53 @@ What is the GIL, and how does it affect Python multithreading?
 
 **Demonstrates:**
 
-* Difference between generators and lists
-* Lazy evaluation vs eager evaluation
+* Lazy vs eager evaluation
 * Memory efficiency of generators
 
 📌 **Interview angle:**
-Why are generators more memory-efficient than lists? When should you prefer generators?
+Why are generators more memory-efficient than lists?
 
 ---
 
-## ▶️ Sample Outputs
+### 6️⃣ Decorators (Function Wrapping)
 
-### Singleton Pattern (Java)
+**File:** `python/decorator_basics.py`
 
-```
-true
-```
+**Demonstrates:**
 
-### Deadlock vs Starvation (Java)
+* Function wrapping
+* Use of decorators for logging and monitoring
 
-```
-(no output – program hangs due to deadlock)
-```
-
-### Volatile Demo (Java)
-
-```
-Worker thread stopped after flag update
-```
+📌 **Interview angle:**
+How do decorators work internally?
 
 ---
 
-### Mutable vs Immutable (Python)
+### 7️⃣ Context Managers
 
-```
-List after modification: [1, 2, 3, 100]
-Number after modification: 50
-```
+**File:** `python/context_manager_demo.py`
 
-### Shallow vs Deep Copy (Python)
+**Demonstrates:**
 
-```
-Original: [[1, 2, 99], [3, 4]]
-Shallow Copy: [[1, 2, 99], [3, 4]]
-Deep Copy: [[1, 2], [3, 4]]
-```
+* Resource acquisition and release
+* `with` statement mechanics
 
-### Generator vs List (Python)
+📌 **Interview angle:**
+How does Python ensure resources are cleaned up properly?
 
-```
-Generator values:
-0 1 2 3 4
-```
+---
+
+### 8️⃣ List vs Tuple Performance
+
+**File:** `python/list_vs_tuple_performance.py`
+
+**Demonstrates:**
+
+* Memory footprint comparison
+* Mutability vs performance trade-offs
+
+📌 **Interview angle:**
+Why are tuples more memory-efficient than lists?
 
 ---
 
@@ -256,7 +308,7 @@ Through this repository, I aim to:
 
 * Strengthen **core CS fundamentals**
 * Improve **interview explanations using real code behavior**
-* Practice explaining *why* code behaves the way it does
+* Understand **concurrency, memory visibility, and language internals**
 * Build consistency through **small, high-quality commits**
 
 ---
@@ -266,9 +318,9 @@ Through this repository, I aim to:
 Planned additions:
 
 * Producer–Consumer problem (Java)
-* Memory visibility vs atomicity deep dive
+* Java happens-before relationships
 * Python multiprocessing vs threading
-* JVM vs Python memory model
+* JVM vs Python memory model comparison
 
 All future additions will strictly follow the
 **one-concept-per-file rule**.
@@ -280,3 +332,4 @@ All future additions will strictly follow the
 This repository is intentionally **minimal and focused**.
 It is meant for **learning, revision, and interview preparation** —
 **not** for building production-grade applications.
+
