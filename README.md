@@ -1,10 +1,3 @@
-Perfect. Your README is already **strong** — now I’ll **edit and extend it** so it **EXACTLY matches your current file structure** and **adds the missing snippets cleanly**, without bloating or changing your tone.
-
-Below is the **UPDATED, DROP-IN REPLACEMENT README.md**
-👉 You can **replace your entire README with this**.
-
----
-
 # **CS Interview Snippets 🧩**
 
 A curated collection of **small, focused Java and Python code snippets** designed for **Computer Science & Software Engineering interview preparation**.
@@ -332,4 +325,5 @@ All future additions will strictly follow the
 This repository is intentionally **minimal and focused**.
 It is meant for **learning, revision, and interview preparation** —
 **not** for building production-grade applications.
+
 
