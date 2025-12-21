@@ -32,266 +32,79 @@ Each snippet in this repository:
 
 ---
 
-## 🗂️ Repository Structure
+## ☕ Java Interview Snippets
 
-```
-cs-interview-snippets/
-│
-├── java/
-│   ├── DeadlockVsStarvation.java
-│   ├── RaceConditionDemo.java
-│   ├── SingletonExample.java
-│   ├── DoubleCheckedLockingSingleton.java
-│   ├── ExecutorServiceDemo.java
-│   ├── ImmutableClassDemo.java
-│   ├── ThreadSafetyBasics.java
-│   └── VolatileDemo.java
-│
-├── python/
-│   ├── default_mutable_arguments.py
-│   ├── gil_demo.py
-│   ├── mutable_vs_immutable.py
-│   ├── shallow_vs_deep_copy.py
-│   ├── generator_vs_list.py
-│   ├── decorator_basics.py
-│   ├── context_manager_demo.py
-│   └── list_vs_tuple_performance.py
-│
-└── README.md
-```
+### 🔹 Singleton Patterns
+
+* Basic Singleton
+* Double-Checked Locking Singleton
+  **Concepts:** controlled object creation, `volatile`, thread safety
+  **Interview focus:** Why Singleton? When is `volatile` required?
 
 ---
 
-## ☕ Java Snippets
+### 🔹 Concurrency Pitfalls
 
-### 1️⃣ Singleton Pattern (Basic)
-
-**File:** `java/SingletonExample.java`
-
-**Demonstrates:**
-
-* Lazy initialization
-* Controlled object creation
-* Ensuring a single instance across the application
-
-📌 **Interview angle:**
-Why restrict object creation? How does Singleton differ from static classes?
+* Race Condition
+* Deadlock vs Starvation
+  **Concepts:** shared state, synchronization, circular wait
+  **Interview focus:** How concurrency bugs occur and how to prevent them
 
 ---
 
-### 2️⃣ Double-Checked Locking Singleton
+### 🔹 Thread Safety & Memory Visibility
 
-**File:** `java/DoubleCheckedLockingSingleton.java`
-
-**Demonstrates:**
-
-* Thread-safe lazy initialization
-* Use of `volatile`
-* Reducing synchronization overhead
-
-📌 **Interview angle:**
-Why is `volatile` mandatory here? What problem does double-checked locking solve?
+* Thread Safety Basics
+* `volatile` keyword
+  **Concepts:** Java Memory Model, visibility vs atomicity
+  **Interview focus:** Why `volatile` ≠ thread safety
 
 ---
 
-### 3️⃣ Deadlock vs Starvation
+### 🔹 Thread Management
 
-**File:** `java/DeadlockVsStarvation.java`
-
-**Demonstrates:**
-
-* Circular lock dependency
-* Threads waiting indefinitely
-* Difference between deadlock and starvation
-
-📌 **Interview angle:**
-How do deadlocks occur, and how can they be prevented?
+* ExecutorService (Thread Pool)
+* Immutable Class Design
+  **Concepts:** thread pools, immutability, defensive copying
+  **Interview focus:** Why immutability simplifies concurrency
 
 ---
 
-### 4️⃣ Race Condition
+## 🐍 Python Interview Snippets
 
-**File:** `java/RaceConditionDemo.java`
+### 🔹 Mutability & Object Behavior
 
-**Demonstrates:**
-
-* Multiple threads accessing shared data
-* Inconsistent results due to lack of synchronization
-
-📌 **Interview angle:**
-What is a race condition, and how does synchronization solve it?
+* Mutable vs Immutable objects
+* Default Mutable Arguments
+  **Concepts:** object references, function call behavior
+  **Interview focus:** Why state persists unexpectedly
 
 ---
 
-### 5️⃣ Thread Safety Basics
+### 🔹 Copying & Memory
 
-**File:** `java/ThreadSafetyBasics.java`
-
-**Demonstrates:**
-
-* Thread-safe vs non-thread-safe behavior
-* Basic synchronization mechanisms
-
-📌 **Interview angle:**
-What makes code thread-safe, and why is thread safety important?
+* Shallow vs Deep Copy
+* List vs Tuple performance
+  **Concepts:** reference sharing, memory footprint
+  **Interview focus:** Performance vs flexibility trade-offs
 
 ---
 
-### 6️⃣ ExecutorService (Thread Pool)
+### 🔹 Iteration & Evaluation
 
-**File:** `java/ExecutorServiceDemo.java`
-
-**Demonstrates:**
-
-* Thread pooling
-* Controlled task execution
-* Proper shutdown of executors
-
-📌 **Interview angle:**
-Why is `ExecutorService` preferred over manual thread creation?
+* Generator vs List
+  **Concepts:** lazy vs eager evaluation
+  **Interview focus:** Memory efficiency and scalability
 
 ---
 
-### 7️⃣ Immutable Class Design
+### 🔹 Python Internals
 
-**File:** `java/ImmutableClassDemo.java`
-
-**Demonstrates:**
-
-* Creating immutable objects
-* Defensive copying
-* Benefits of immutability in concurrency
-
-📌 **Interview angle:**
-Why are immutable objects inherently thread-safe?
-
----
-
-### 8️⃣ Volatile Keyword (Memory Visibility)
-
-**File:** `java/VolatileDemo.java`
-
-**Demonstrates:**
-
-* Java Memory Model visibility guarantees
-* Difference between **visibility** and **atomicity**
-
-📌 **Interview angle:**
-Why does `volatile` not guarantee thread safety? When should it be used?
-
----
-
-## 🐍 Python Snippets
-
-### 1️⃣ Mutable vs Immutable Objects
-
-**File:** `python/mutable_vs_immutable.py`
-
-**Demonstrates:**
-
-* Behavior of mutable objects (lists)
-* Behavior of immutable objects (integers, strings)
-
-📌 **Interview angle:**
-Why do changes to lists persist outside functions but integers do not?
-
----
-
-### 2️⃣ Shallow vs Deep Copy
-
-**File:** `python/shallow_vs_deep_copy.py`
-
-**Demonstrates:**
-
-* Reference sharing in shallow copies
-* Fully independent objects in deep copies
-
-📌 **Interview angle:**
-Why does modifying a nested object affect a shallow copy?
-
----
-
-### 3️⃣ Default Mutable Arguments
-
-**File:** `python/default_mutable_arguments.py`
-
-**Demonstrates:**
-
-* Persistence of default mutable arguments across calls
-* Why this is a common Python pitfall
-
-📌 **Interview angle:**
-Why should mutable objects not be used as default arguments?
-
----
-
-### 4️⃣ Global Interpreter Lock (GIL)
-
-**File:** `python/gil_demo.py`
-
-**Demonstrates:**
-
-* Python’s Global Interpreter Lock
-* Limitations of CPU-bound multithreading
-
-📌 **Interview angle:**
-What is the GIL, and how does it affect Python multithreading?
-
----
-
-### 5️⃣ Generator vs List
-
-**File:** `python/generator_vs_list.py`
-
-**Demonstrates:**
-
-* Lazy vs eager evaluation
-* Memory efficiency of generators
-
-📌 **Interview angle:**
-Why are generators more memory-efficient than lists?
-
----
-
-### 6️⃣ Decorators (Function Wrapping)
-
-**File:** `python/decorator_basics.py`
-
-**Demonstrates:**
-
-* Function wrapping
-* Use of decorators for logging and monitoring
-
-📌 **Interview angle:**
-How do decorators work internally?
-
----
-
-### 7️⃣ Context Managers
-
-**File:** `python/context_manager_demo.py`
-
-**Demonstrates:**
-
-* Resource acquisition and release
-* `with` statement mechanics
-
-📌 **Interview angle:**
-How does Python ensure resources are cleaned up properly?
-
----
-
-### 8️⃣ List vs Tuple Performance
-
-**File:** `python/list_vs_tuple_performance.py`
-
-**Demonstrates:**
-
-* Memory footprint comparison
-* Mutability vs performance trade-offs
-
-📌 **Interview angle:**
-Why are tuples more memory-efficient than lists?
+* Global Interpreter Lock (GIL)
+* Decorators
+* Context Managers
+  **Concepts:** threading limitations, function wrapping, resource management
+  **Interview focus:** How Python works under the hood
 
 ---
 
@@ -301,21 +114,21 @@ Through this repository, I aim to:
 
 * Strengthen **core CS fundamentals**
 * Improve **interview explanations using real code behavior**
-* Understand **concurrency, memory visibility, and language internals**
+* Develop intuition around **concurrency and memory models**
 * Build consistency through **small, high-quality commits**
 
 ---
 
 ## 🚀 Future Enhancements
 
-Planned additions:
+Planned additions include:
 
 * Producer–Consumer problem (Java)
-* Java happens-before relationships
+* Happens-before relationships (Java Memory Model)
 * Python multiprocessing vs threading
 * JVM vs Python memory model comparison
 
-All future additions will strictly follow the
+All additions will strictly follow the
 **one-concept-per-file rule**.
 
 ---
