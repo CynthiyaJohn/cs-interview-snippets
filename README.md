@@ -1,142 +1,53 @@
-# **CS Interview Snippets 🧩**
+# 🧩 CS Interview Snippets
 
-A curated collection of **small, focused Java and Python code snippets** designed for **Computer Science & Software Engineering interview preparation**.
+**Status:** Active · Updated regularly  
+**Focus:** Java & Python · Core CS interview concepts
 
-Instead of large projects, this repository emphasizes **clarity, correctness, and conceptual understanding** through minimal yet meaningful implementations.
+A lightweight daily practice repository for understanding
+and revising interview-relevant Computer Science topics.
+---
+
+### 🧠 What this repo is
+
+* Small, focused **code snippets**
+* One concept per file
+* Updated **incrementally** as part of daily preparation
 
 ---
 
-## 📌 Why This Repository?
+### ☕ Java (covered over time)
 
-In technical interviews, candidates are evaluated on:
-
-* Strong **Computer Science fundamentals**
-* Ability to explain **program behavior**, not just syntax
-* Awareness of **common pitfalls, design patterns, and concurrency issues**
-* Understanding of **language internals and memory models**
-
-This repository serves as a **personal interview reference**, containing frequently asked concepts implemented as **clean, runnable, and explainable code snippets**.
+* Concurrency & thread safety
+* Java Memory Model (`volatile`, visibility, atomicity)
+* Synchronization, locks, executors
+* Immutability & JVM thread behavior
 
 ---
 
-## 🧠 Key Philosophy
+### 🐍 Python (covered over time)
 
-Each snippet in this repository:
-
-* Demonstrates **one interview-relevant concept**
-* Uses **minimal and readable code**
-* Avoids frameworks and unnecessary boilerplate
-* Can be explained **verbally within minutes**
-
-> **One concept → One file → Clear explanation**
+* Mutability & object references
+* Copying & memory behavior
+* Generators & lazy evaluation
+* GIL, threading & multiprocessing
+* Decorators & context managers
 
 ---
 
-## ☕ Java Interview Snippets
+### 🔁 Update style
 
-### 🔹 Singleton Patterns
-
-* Basic Singleton
-* Double-Checked Locking Singleton
-  **Concepts:** controlled object creation, `volatile`, thread safety
-  **Interview focus:** Why Singleton? When is `volatile` required?
+* Add or refine **1–2 concepts per day**
+* Commit with clear, concept-based messages
+* Keep snippets **runnable and explainable**
 
 ---
 
-### 🔹 Concurrency Pitfalls
+### ⚠️ Note
 
-* Race Condition
-* Deadlock vs Starvation
-  **Concepts:** shared state, synchronization, circular wait
-  **Interview focus:** How concurrency bugs occur and how to prevent them
-
+This repository is for **learning and interview preparation**,
+not for production use.
 ---
 
-### 🔹 Thread Safety & Memory Visibility
 
-* Thread Safety Basics
-* `volatile` keyword
-  **Concepts:** Java Memory Model, visibility vs atomicity
-  **Interview focus:** Why `volatile` ≠ thread safety
-
----
-
-### 🔹 Thread Management
-
-* ExecutorService (Thread Pool)
-* Immutable Class Design
-  **Concepts:** thread pools, immutability, defensive copying
-  **Interview focus:** Why immutability simplifies concurrency
-
----
-
-## 🐍 Python Interview Snippets
-
-### 🔹 Mutability & Object Behavior
-
-* Mutable vs Immutable objects
-* Default Mutable Arguments
-  **Concepts:** object references, function call behavior
-  **Interview focus:** Why state persists unexpectedly
-
----
-
-### 🔹 Copying & Memory
-
-* Shallow vs Deep Copy
-* List vs Tuple performance
-  **Concepts:** reference sharing, memory footprint
-  **Interview focus:** Performance vs flexibility trade-offs
-
----
-
-### 🔹 Iteration & Evaluation
-
-* Generator vs List
-  **Concepts:** lazy vs eager evaluation
-  **Interview focus:** Memory efficiency and scalability
-
----
-
-### 🔹 Python Internals
-
-* Global Interpreter Lock (GIL)
-* Decorators
-* Context Managers
-  **Concepts:** threading limitations, function wrapping, resource management
-  **Interview focus:** How Python works under the hood
-
----
-
-## 🧠 Learning Outcomes
-
-Through this repository, I aim to:
-
-* Strengthen **core CS fundamentals**
-* Improve **interview explanations using real code behavior**
-* Develop intuition around **concurrency and memory models**
-* Build consistency through **small, high-quality commits**
-
----
-
-## 🚀 Future Enhancements
-
-Planned additions include:
-
-* Producer–Consumer problem (Java)
-* Happens-before relationships (Java Memory Model)
-* Python multiprocessing vs threading
-* JVM vs Python memory model comparison
-
-All additions will strictly follow the
-**one-concept-per-file rule**.
-
----
-
-## ⚠️ Note
-
-This repository is intentionally **minimal and focused**.
-It is meant for **learning, revision, and interview preparation** —
-**not** for building production-grade applications.
 
 
