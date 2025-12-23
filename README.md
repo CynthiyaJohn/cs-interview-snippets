@@ -1,10 +1,10 @@
 # 🧩 CS Interview Snippets
 
-**Status:** Active · Updated regularly  
-**Focus:** Java & Python · Core CS interview concepts
+> Daily interview preparation log  
+> Java & Python · Small, focused code updates
 
-A lightweight daily practice repository for understanding
-and revising interview-relevant Computer Science topics.
+_Last updated as part of end-of-day practice._
+
 ---
 
 ### 🧠 What this repo is
@@ -47,6 +47,7 @@ and revising interview-relevant Computer Science topics.
 This repository is for **learning and interview preparation**,
 not for production use.
 ---
+
 
 
 
