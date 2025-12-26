@@ -1,4 +1,4 @@
-//Boolean evaluation
+#Boolean evaluation
 values = [0, "", [], None, {}, 1, "hi"]
 
 for v in values:
