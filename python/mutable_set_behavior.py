@@ -1,0 +1,5 @@
+try:
+    s = set()
+    s.add([1, 2, 3])
+except TypeError as e:
+    print(e)
